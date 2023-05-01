@@ -1,0 +1,48 @@
+Sterling Miller
+Professor Colbert
+Computer Science III
+April 5th, 2023
+
+I have no prior coding experience in the language C. I do, however, know some of the benefits 
+C has when compared to other languages. One such benefit being C is faster than Python in
+completing tasks. I also know that C is a compiled language, while Python is an interpreted
+language. Declaring the type of variables and using only values of those particular types is
+required in C programs. We can then compile the program into machine code, which makes it
+much more efficient for the computer.
+
+I hope to develop a comprehensive understanding of C and strengthen my knowledge of the
+Unix/Linux operating systems and virtual machines. I have been interested in learning how to
+use virtual machines in the past, so I see this as a great opportunity to learn how to use them
+properly in development or testing. I'm also interested in the pros and cons that Linux has in
+comparison to systems like MacOS and Windows.
+
+The large amount of content and information that we will cover in the course is the most
+frightening part. The previous CS courses have been fairly challenging, however CS 212 seems
+to be a step up from the previous courses. That being said, I am still very much looking forward 
+to learning the content offered and I believe there are enough resources offered for me to do
+well in the class.
+
+I would like to gain a well-rounded understanding of program development, the Unix/Linux
+operating systems, and how to use virtual machines properly. If I have a firm knowledge of those
+constructs, I can land an internship and be successful. I would also like to become proficient in 
+programming my own ideas for tools or applications, since it is a sort of hobby for me.
+~                                                                                                   
+~                                                                                                   
+~                                                                                                   
+~                                                                                                   
+~                                                                                                   
+~                                                                                                   
+~                                                                                                   
+~                                                                                                   
+~                                                                                                   
+~                                                                                                   
+~                                                                                                   
+~                                                                                                   
+~                                                                                                   
+~                                                                                                   
+~                                                                                                   
+~                                                                                                   
+~                                                                                                   
+~                                                                                                   
+~                                                                                                   
+-- INSERT --                                                                      13,88         All

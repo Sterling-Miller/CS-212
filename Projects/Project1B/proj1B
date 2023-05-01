@@ -1,0 +1,21 @@
+#!/bin/bash
+
+dir=$1
+
+mkdir "./$dir"
+mkdir "./$dir/dir1"
+mkdir "./$dir/dir2"
+mkdir "./$dir/dir1/dir3"
+mkdir "./$dir/dir1/dir3/dir4"
+
+echo "fileA!" > "./$dir/dir1/fileA"
+echo "Hi" > "./$dir/dir2/fileB"
+echo "Bye" > "./$dir/dir1/dir3/fileC"
+
+chmod 500 "./$dir/dir1/dir3/dir4"
+chmod 600 "./$dir/dir1/dir3/fileC"
+chmod 000 "./$dir/dir1/dir3"
+chmod 600 "./$dir/dir1/fileA"
+chmod 700 "./$dir/dir1"
+chmod 640 "./$dir/dir2/fileB"
+chmod 755 "./$dir/dir2"
