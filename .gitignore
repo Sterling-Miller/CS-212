@@ -1,6 +1,7 @@
 *.vdi
 *.vscode
 *.DS_Store
+*.pdf
 
 # Prerequisites
 *.d
