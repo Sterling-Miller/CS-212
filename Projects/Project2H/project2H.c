@@ -10,15 +10,14 @@ int *AllocateArray(int N)
      * Hint: use the rand() function and a modulo operator.
      */
     int *arr = malloc(N * sizeof(int));
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++)
         arr[i] = rand() % 10;
-    }
     return arr;
 }
 
 void SortArray(int *A, int N)
 {
-for (int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++) {
         for (int j = i + 1; j < N; j++) {
             if (A[j] < A[i]) {
                 int temp = A[i];
@@ -42,7 +41,6 @@ int main()
  *  int sizes[11] = { 1000, 2000, 4000, 8000, 16000, 32000, 64000, 128000,
  *                    256000, 512000, 1024000 }; 
  */
-    
 
     for (int i = 0 ; i < 8 ; i++)
     {
@@ -58,19 +56,19 @@ int main()
         (void)gettimeofday(&startTime, NULL);
         int *arr = AllocateArray(sizes[i]);
         (void)gettimeofday(&endTime, NULL);
-        alloc_time = 1000000 * (endTime.tv_sec - startTime.tv_sec) + (endTime.tv_usec - startTime.tv_usec);
+        alloc_time = (endTime.tv_sec - startTime.tv_sec) + (endTime.tv_usec - startTime.tv_usec)/1000000.0;
         (void)gettimeofday(&startTime, NULL);
         SortArray(arr, sizes[i]);
         (void)gettimeofday(&endTime, NULL);
-        sort_time = 1000000 * (endTime.tv_sec - startTime.tv_sec) + (endTime.tv_usec - startTime.tv_usec);
+        sort_time = (endTime.tv_sec - startTime.tv_sec) + (endTime.tv_usec - startTime.tv_usec)/1000000.0;
         (void)gettimeofday(&startTime, NULL);
         DeallocateArray(arr);
         (void)gettimeofday(&endTime, NULL);
-        dealloc_time = 1000000 * (endTime.tv_sec - startTime.tv_sec) + (endTime.tv_usec - startTime.tv_usec);
+        dealloc_time = (endTime.tv_sec - startTime.tv_sec) + (endTime.tv_usec - startTime.tv_usec)/1000000.0;
         
         printf("Timings for array of size %d\n", sizes[i]);
-        printf("\tTime for allocation is %g, time per element = %g\n", alloc_time, alloc_time/sizes[i]);
-        printf("\tTime for sort_time is %g, time per element = %g\n", sort_time, sort_time/sizes[i]);
-        printf("\tTime for deallocation is %g\n", dealloc_time);
+        printf("\tTime for allocation is %g sec, time per element = %g sec\n", alloc_time, alloc_time/sizes[i]);
+        printf("\tTime for sort_time is %g sec, time per element = %g sec\n", sort_time, sort_time/sizes[i]);
+        printf("\tTime for deallocation is %g sec\n", dealloc_time);
     }
 }
