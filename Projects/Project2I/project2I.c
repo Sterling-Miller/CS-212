@@ -1,0 +1,81 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/time.h>
+
+int *AllocateArray(int N)
+{
+    /* Allocate an array with N integers.
+     * The value of each element of the array should be a
+     * random number between 0 and 10N.
+     * Hint: use the rand() function and a modulo operator.
+     */
+    int *arr = malloc(N * sizeof(int));
+    for (int i = 0; i < N; i++)
+        arr[i] = rand() % 10;
+    return arr;
+}
+
+int compareint(const void *p1, const void *p2)
+{   
+    /* Cast pointers to int pointers and dereference them */
+    int int_a = *((int*)p1);
+    int int_b = *((int*)p2);
+
+    /* Compare */
+    if (int_a < int_b)
+        return 1;
+    else if (int_a > int_b)
+        return -1;
+    else 
+        return 0;
+}
+
+void SortArray(int *A, int N)
+{
+    qsort(A, N, sizeof(int), compareint);
+}
+
+void DeallocateArray(int *A)
+{
+    free(A);
+}
+
+int main()
+{
+    int sizes[8] = { 1000, 2000, 4000, 8000, 16000, 32000, 64000, 128000 };
+
+/* For fun:
+ *  int sizes[11] = { 1000, 2000, 4000, 8000, 16000, 32000, 64000, 128000,
+ *                    256000, 512000, 1024000 }; 
+ */
+
+    for (int i = 0 ; i < 8 ; i++)
+    {
+        double alloc_time = 0., sort_time = 0., dealloc_time = 0.;
+        struct timeval startTime;
+        struct timeval endTime;
+
+        /* Call the three functions in a sequence. Also use
+         * gettimeofday calls surrounding each function and set the 
+         * corresponding variable (alloc_time, sort_time, dealloc_time).
+         */
+        
+        (void)gettimeofday(&startTime, NULL);
+        int *arr = AllocateArray(sizes[i]);
+        (void)gettimeofday(&endTime, NULL);
+        alloc_time = (endTime.tv_sec - startTime.tv_sec) + (endTime.tv_usec - startTime.tv_usec)/1000000.0;
+        (void)gettimeofday(&startTime, NULL);
+        SortArray(arr, sizes[i]);
+        (void)gettimeofday(&endTime, NULL);
+        sort_time = (endTime.tv_sec - startTime.tv_sec) + (endTime.tv_usec - startTime.tv_usec)/1000000.0;
+        (void)gettimeofday(&startTime, NULL);
+        DeallocateArray(arr);
+        (void)gettimeofday(&endTime, NULL);
+        dealloc_time = (endTime.tv_sec - startTime.tv_sec) + (endTime.tv_usec - startTime.tv_usec)/1000000.0;
+        
+        printf("Timings for array of size %d\n", sizes[i]);
+        printf("\tTime for allocation is %g sec, time per element = %g sec\n", alloc_time, alloc_time/sizes[i]);
+        printf("\tTime for sort_time is %g sec, time per element = %g sec\n", sort_time, sort_time/sizes[i]);
+        printf("\tTime for deallocation is %g sec\n", dealloc_time);
+    }
+}
