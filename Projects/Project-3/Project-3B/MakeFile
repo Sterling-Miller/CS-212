@@ -1,0 +1,12 @@
+# Compiler
+CC = gcc
+CFLAGS = -W -Wall
+OBJECTS = project3B.c project3B_deque.c
+
+all: project3B
+
+project3B: $(OBJECTS)
+	$(CC) $(CFLAGS) -o project3B $(OBJECTS)
+
+clean:
+	rm -f project3B
