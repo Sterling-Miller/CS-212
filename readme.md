@@ -1,1 +1,1 @@
-## CS 212 Projects & Lab ##
+## CS 212 Projects, Labs, & Examples ##
