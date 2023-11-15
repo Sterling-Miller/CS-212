@@ -1,1 +1,1 @@
-**CS 212 Projects, Labs, & Examples**
+**CS 212 - Computer Science III: Projects, Labs, & In-Class Examples**
